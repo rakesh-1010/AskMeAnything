@@ -40,7 +40,6 @@ user_emails.each do |email|
 end
 
 questioner = User.find_by(email: "rakesh.kumar@t20.com")
-byebug
 Question.create!(
   body: questions[0],
   category: "Cricket Trivia",
