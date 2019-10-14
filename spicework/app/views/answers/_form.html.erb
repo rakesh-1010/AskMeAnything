@@ -12,18 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :body %>
-    <%= f.text_field :body %>
+    <%= f.text_area :body, style: "margin: 0px; width: 617px; height: 143px;" %>
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
-    <%= f.label :question_id %>
-    <%= f.text_field :question_id %>
+    <%= f.hidden_field :question_id, value: answer.question_id || question.id %>
   </div>
 
   <div class="actions">

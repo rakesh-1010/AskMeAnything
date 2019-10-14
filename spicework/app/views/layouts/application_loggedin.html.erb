@@ -8,10 +8,16 @@
 </head>
 <body>
   <div class="topnavbar">
-    <h2> Welcome to Spiceworks Q&A</h2>
+    <a href="<%= root_path%>" >
+      <h2> Home</h2>
+    </a>
+    <%= current_user.email %> |
+    <%= link_to('Logout', destroy_user_session_path, :method => 'delete') %>
   </div>
   <p class="alert"><%= alert %></p>
   <p id="notice"><%= notice %></p>
   <%= yield %>
 </body>
 </html>
+
+

@@ -1,31 +1,25 @@
-<p id="notice"><%= notice %></p>
-<%= link_to('Logout', destroy_user_session_path, :method => 'delete') %>
-<h1>Questions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.category %></td>
-        <td><%= question.body %></td>
-        <td><%= question.user_id %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="container">
+  <div class="new-question" style="margin-bottom: 10px">
+    <%= button_to ' + New Question ', new_question_path, class: "btn btn-info", method: :get %>
+  </div>
+  <% @questions.each do |question| %>
+    <div class="question-box" data-id= "<%= question.id %>">
+      <%= render 'question_box', question: question , hide_answer_btn: false %>
+    </div>
+  <% end %>
+</div>
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+
+<script>
+  $('.question-box').click(function() {
+    let questionId = $(this).attr("data-id")
+    window.location = "/questions/" + questionId;
+    return true;
+  })
+
+  $(".question-box a").click(function(e) {
+    e.stopPropagation();
+  });
+
+</script>

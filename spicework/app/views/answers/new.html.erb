@@ -1,5 +1,8 @@
-<h1>New Answer</h1>
-
-<%= render 'form', answer: @answer %>
-
-<%= link_to 'Back', answers_path %>
+<div class="container">
+  <div class="question-box" data-id= "<%= @question.id %>">
+    <%= render 'questions/question_box', question: @question, hide_answer_btn: true %>
+    <div class="answer-text-area" style="margin-top: 25px;">
+      <%= render 'form', answer: @answer, question: @question %>
+    </div>
+  </div>
+</div>

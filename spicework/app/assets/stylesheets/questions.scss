@@ -1,3 +1,31 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.question-box{
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.container{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.topnavbar {
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid grey;
+  text-align: center;
+}
+
+.topnavbar a:visited {
+  color: #000;
+}
+
+.topnavbar a:hover {
+    color: #000;
+}

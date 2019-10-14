@@ -1,19 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @question.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @question.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<div class="container">
+  <div class="question-box" data-id= "<%= @question.id %>">
+    <%= render 'question_box', question: @question, hide_answer_btn: false %>
+    <%= render 'answers/answer_body', answers: @question.answers %>
+  </div>
+</div>

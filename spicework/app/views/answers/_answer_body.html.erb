@@ -1,0 +1,22 @@
+<div style="border-bottom: 1px dashed #787C7E;text-align: center;">
+  <strong> Answers: </strong>
+</div>
+<% answers.each_with_index do |answer, i| %>
+  <div class="col-md-8" style="border-bottom: 1px dashed #787C7E">
+    <h5 style="font-style: italic">
+      <%= answer.body %>
+    </h5>
+    <span class="label label-default" style="color: #787C7E">
+      Posted By:
+      <%= answer.user.try(:email) %> |
+      <% if current_user.id == question.user_id %>
+        <%= link_to 'Edit', edit_answer_path(answer) %> |
+        <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <% end %>
+      <%= answer.updated_at.strftime("%d-%b-%y %I:%M %P") %>
+    </span>
+  </div>
+<%end%>
+<div class="no_answers" style="margin-top: 10px">
+  <%= "No Answers Yet." if answers.length == 0 %>
+</div>

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Question:</strong>
-  <%= @answer.question %>
+  <%= @answer.question.try(:body) %>
 </p>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |
