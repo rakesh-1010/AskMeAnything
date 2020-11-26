@@ -1,7 +1,8 @@
 == README
 
 Steps to setup App,
-
+This is question answer forum,
+anyone can ask questions to a community and can get answered back
 
 clone or fork app from the repo,
 ```run bundle install```
